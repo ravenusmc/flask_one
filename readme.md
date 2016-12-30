@@ -8,3 +8,5 @@ projects in Flask so that I can have them up on the web.
 
 # Getting started
 ### Installing
+
+Flask must be installed.
