@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from one import *
 import time
 
@@ -8,25 +8,15 @@ app = Flask(__name__)
 def index():
   return render_template('index.html', the_title='Home Page')
 
+@app.route('/one', methods=['POST'])
+def first():
+    num1 = int(request.form['numberOne'])
+    num2 = int(request.form['numberTwo'])
+    return str(num(num1, num2))
+
 @app.route('/entry')
 def entry_page():
-  return render_template('entry.html', the_title='Mikes Math Site')
-
-@app.after_request
-def add_header(r):
-    """
-    Add headers to both force latest IE rendering engine or Chrome Frame,
-    and also to cache the rendered page for 10 minutes.
-    """
-    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    r.headers["Pragma"] = "no-cache"
-    r.headers["Expires"] = "0"
-    r.headers['Cache-Control'] = 'public, max-age=0'
-    return r
-
-# @app.route('/one')
-# def first():
-#   return str(num(2,3))
+    return render_template('entry.html', the_title='Mikes Math Site')
 
 app.run(debug=True)
 

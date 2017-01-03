@@ -1,3 +1,12 @@
+/* Generic CSS for all pages */
+
 body {
-  background-color: pink;
+  background-color: lightblue;
 }
+
+.center {
+  text-align: center;
+}
+
+
+/*CSS For index page page */
