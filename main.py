@@ -10,13 +10,13 @@ def index():
 
 @app.route('/one', methods=['POST'])
 def first():
-    num1 = int(request.form['numberOne'])
-    num2 = int(request.form['numberTwo'])
-    return str(num(num1, num2))
+    numOne = int(request.form['numberOne'])
+    numTwo = int(request.form['numberTwo'])
+    results = str(num(numOne, numTwo))
+    return render_template('results.html', numOne = numOne, numTwo = numTwo, result = results)
 
 @app.route('/entry')
 def entry_page():
     return render_template('entry.html', the_title='Mikes Math Site')
 
 app.run(debug=True)
-
