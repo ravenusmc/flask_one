@@ -2,14 +2,16 @@
 
 {% block body %}
 
-<h1>Results</h1>
+<h1 class='center head_results'>Results</h1>
 
-<p>You submitted the following numbers: </p>
-<table>
-    <tr><td>Number One: </td><td> {{ numOne }} </td></tr>
-    <tr><td>Number Two: </td><td> {{ numTwo }} </td></tr>
-</table>
-
-<p>{{ numOne }} and {{ numTwo }} added together equal {{ result }} </p>
+<div class='center first-div'>
+    <p>You submitted the following numbers: </p>
+    <table>
+        <tr><td>Number One: </td><td> {{ numOne }} </td></tr>
+        <tr><td>Number Two: </td><td> {{ numTwo }} </td></tr>
+    </table>
+    <br>
+    <p>{{ numOne }} and {{ numTwo }} added together equal {{ result }} </p>
+</div>
 
 {% endblock %}

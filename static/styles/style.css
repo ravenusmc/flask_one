@@ -31,3 +31,8 @@ body {
     border-radius: 10px;
     background-color: purple;
 }
+
+/* CSS for results page */
+.head_results {
+    margin-top: 25px;
+}
