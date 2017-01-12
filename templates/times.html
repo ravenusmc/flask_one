@@ -2,7 +2,19 @@
 
 {% block body %}
 
-    <h1 class='center heading_times'>Multiply</h1>
+    <h1 class='center heading_times'>{{ the_title }}</h1>
+
+    <div class='center first-div'>
+        <form method='POST' action=''>
+            <table align='center'>
+                <p>Enter your numbers here:</p>
+                <tr><td>Number One: </td><td><input name='numOne' width='50'></td></tr>
+                <tr><td>Number Two: </td><td><input name='numTwo' width='50'></td></tr>
+            </table>
+
+            <button class='entry-button'>Submit</button>
+        </form>
+    </div>
 
 
 
