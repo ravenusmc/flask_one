@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from one import *
+from times import *
 import time
 
 app = Flask(__name__)
@@ -25,6 +26,12 @@ def first():
 def multiply_page():
     return render_template('times.html', the_title='Multiply Time!')
 
+@app.route('/times', methods=['POST'])
+def second():
+    first = int(request.form['numOne'])
+    second = int(request.form['numTwo'])
+    answer = str(times(first, second))
+    return render_template('mul_results.html', result = answer, one = first, two = second)
 
 #NEED TO MAKE ONE FINAL SET OF PAGES FOR USERS NAME
 
