@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from one import *
 from times import *
+from names import *
 import time
 
 app = Flask(__name__)
@@ -33,9 +34,16 @@ def second():
     answer = str(times(first, second))
     return render_template('mul_results.html', result = answer, one = first, two = second)
 
-#NEED TO MAKE ONE FINAL SET OF PAGES FOR USERS NAME
+#Code for name pages
 @app.route('/name')
 def name_page():
     return render_template('name.html', the_title='Name Time!')
+
+@app.route('/names', methods=['POST'])
+def third():
+    first = str(request.form['first'])
+    last = str(request.form['last'])
+    full_name = str(name(first, last))
+    return render_template('name_results.html', full = full_name, first = first, last = last)
 
 app.run(debug=True)
