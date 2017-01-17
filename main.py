@@ -34,5 +34,8 @@ def second():
     return render_template('mul_results.html', result = answer, one = first, two = second)
 
 #NEED TO MAKE ONE FINAL SET OF PAGES FOR USERS NAME
+@app.route('/name')
+def name_page():
+    return render_template('name.html', the_title='Name Time!')
 
 app.run(debug=True)
